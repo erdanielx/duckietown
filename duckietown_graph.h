@@ -1,3 +1,20 @@
+/*
+
+    Data structure for a connected, directed graph to be used as the map of the Duckietown city.
+    Each node contains the ID of an April Tag, which is the one opposite to and in front of the tile in which the robot is located.
+    Edges are roads between intersections in the city.
+    Each edge contains:
+        -Weight: number of tiles in-between two positions (one for the intersection which must be traveled, one for the arrival tile which faces a new April Tag, plus those in-between).
+        -Action: numerical representation of the action needed to take at the intersection in order to traverse the road corresponding to the current edge. These are:
+            .T_LEFT: Turn left.
+            .T_RIGHT: Turn right.
+            .T_FWD: Go forward.
+            .NO_ACTION: Unrecognized action (probably a bug while creating the graph).
+
+*/
+
+//Note: this code hasn't been tested yet
+
 #ifndef DUCKIEGRAPH_H
 #define DUCKIEGRAPH_H
 
